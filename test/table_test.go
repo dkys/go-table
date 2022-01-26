@@ -1,26 +1,19 @@
-# go-table
-
-go 实现的一个简单的命令行表格。支持中文、自定义表格颜色、自定义对齐方式。
-
-# Installation
-
-````
-GO111MODULE=on
-go get github.com/dkys/go-table
-````
-
-# Using
-
-```go
-package main
+package test
 
 import (
-	"fmt"
-	"github.com/gookit/color"
 	"github.com/dkys/go-table"
+	"github.com/gookit/color"
+	"testing"
 )
 
-func main() {
+func TestAddRow(t *testing.T) {
+	tbl := table.Create("ID", "名称", "备注")
+	tbl.AddRow([]interface{}{1, "张三", "20岁，单身！黄叶青苔归路，屧粉衣香何处。"})
+	tbl.AddRow([]interface{}{2, "李四", "30 years old"})
+	t.Logf("\n%v", tbl)
+}
+
+func TestData(t *testing.T) {
 	tbl := table.Create("ID", "诗词", "作者", "内容")
 	data := [][]interface{}{
 		{1, "《如梦令·黄叶青苔归路》", "纳兰性德", "木叶纷纷归路，残月晓风何处。消息竟沉沉，今夜相思几许。秋雨，秋雨，一半因风吹去。"},
@@ -32,7 +25,5 @@ func main() {
 	tbl.Data(data)
 	tbl.SetAlign(table.AlignLeft)   // 设置对齐方式
 	tbl.SetBorderColor(color.FgRed) // 设置边框颜色
-	fmt.Println(tbl)
+	t.Logf("\n%v", tbl)
 }
-
-```
