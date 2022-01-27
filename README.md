@@ -30,6 +30,7 @@ func main() {
 		{5, "《普天乐·秋江忆别》", "赵善庆", "晚天长，秋水苍。山腰落日，雁背斜阳。壁月词，朱唇唱。犹记当年兰舟上，洒洒风泪湿罗裳。钗分凤凰，杯斟鹦鹉，人拆鸳鸯。"},
 	}
 	tbl.Data(data)
+	tbl.AddRow([]interface{}{6,"《江城子·斗转星移玉漏频》","和凝","斗转星移玉漏频。已三更，对栖莺。历历花间，似有马啼声。含笑整衣开绣户，斜敛手，下阶迎。"})
 	tbl.SetAlign(table.AlignLeft)   // 设置对齐方式
 	tbl.SetBorderColor(color.FgRed) // 设置边框颜色
 	fmt.Println(tbl)
