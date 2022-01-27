@@ -35,5 +35,7 @@ func main() {
 	tbl.SetBorderColor(color.FgRed) // 设置边框颜色
 	fmt.Println(tbl)
 }
-
 ```
+# Preview
+![image](img_1.png)
+![image](img.png)
