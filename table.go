@@ -183,5 +183,5 @@ func (t *Table) String() string {
 		dtStr.WriteString(t.row(row))
 	}
 
-	return fmt.Sprintf("%s%s\n", dtStr.String(), t.Line)
+	return fmt.Sprintf("\n%s%s\n", dtStr.String(), t.Line)
 }

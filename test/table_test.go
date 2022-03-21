@@ -24,7 +24,9 @@ func TestData(t *testing.T) {
 	}
 	tbl.Data(data)
 	tbl.AddRow([]interface{}{6, "《江城子·斗转星移玉漏频》", "和凝", "斗转星移玉漏频。已三更，对栖莺。历历花间，似有马啼声。含笑整衣开绣户，斜敛手，下阶迎。"})
+	var id int32 = 7
+	tbl.AddRow([]interface{}{id, "《江城子·斗转星移玉漏频》", "和凝", "斗转星移玉漏频。已三更，对栖莺。历历花间，似有马啼声。含笑整衣开绣户，斜敛手，下阶迎。"})
 	tbl.SetAlign(table.AlignLeft)   // 设置对齐方式
 	tbl.SetBorderColor(color.FgRed) // 设置边框颜色
-	t.Logf("\n%v", tbl)
+	t.Logf("%v", tbl)
 }
